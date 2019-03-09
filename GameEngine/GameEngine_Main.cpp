@@ -41,7 +41,7 @@ int main( int argc, char** args)
 
    bfps = SDL_GetTicks();
 
-   if ((bfps-efps)*GameEngine::frameLimit  >= 1000.0 || true)
+   if ((bfps-efps)*GameEngine::frameLimit  >= 1000.0)
    {
 
     if (bfps-efps != 0)
@@ -81,7 +81,7 @@ int main( int argc, char** args)
      {
       if (GameEngine::recordTime < 0)
       {
-       GameEngine::StartRecord("record");
+     //  GameEngine::StartRecord("record");
       }
       else {GameEngine::EndRecord();}
       delR = false;
@@ -93,7 +93,7 @@ int main( int argc, char** args)
     {
      if (delS)
      {
-      GameEngine::ScreenShot(KString("record/screenshot_%d.bmp", rand()%90000));
+      //GameEngine::ScreenShot(KString("record/screenshot_%d.bmp", rand()%90000));
       delS = false;
      }
     }

@@ -215,7 +215,7 @@ void GameEngine::SetVideo(bool fullScreen, bool reloadImages)
 	// glShadeModel(GL_SMOOTH);
   //glClearColor(0.0f, 0.0f, 1.0f,1.0f);// 0.5f);
 	//zz glClearDepth(1.0f);
-	/* glEnable(GL_DEPTH_TEST);
+	 glEnable(GL_DEPTH_TEST);
 	 glDepthFunc(GL_LEQUAL);
   glDisable(GL_DEPTH_TEST);
 	 glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
@@ -224,7 +224,7 @@ void GameEngine::SetVideo(bool fullScreen, bool reloadImages)
 
   glViewport(0,0,WINDOW_W,WINDOW_H);
  	glMatrixMode(GL_PROJECTION);
- 	glLoadIdentity();*/
+ 	glLoadIdentity();
 
 
  	//gluPerspective(45.0f,(GLfloat)SCREEN_W/(GLfloat)SCREEN_H,0.1f,100.0f);
@@ -354,6 +354,14 @@ void GameEngine::Draw()
  //glOrtho(0.0f,WINDOW_W,WINDOW_H,0.0f,-1000.0f,1000.0f);
 
  MainFile::Draw();
+
+ GameEngine::SetColor(1,0,0);
+ GameDraw::DrawText(KString("fps:%f", GameEngine::FPS), 10, 10);
+ GameEngine::ResetColor();
+
+ /*GameEngine::SetColor(1,1,0,.5f);
+ GameDraw::DrawBox(0,0,500,500);
+ GameEngine::ResetColor();*/
 
 
  /*GameDraw::SetShiftZ(1000);

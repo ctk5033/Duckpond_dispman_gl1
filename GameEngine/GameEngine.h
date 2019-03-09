@@ -107,7 +107,7 @@ class GameEngine
   static float frameLimit;
   static float GetFPS();
 
-  static int key[256]; // keyboard key states
+  static int key[2056]; // keyboard key states
   static int GetKey(int k);
 
   static GColor color;
