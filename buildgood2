@@ -1,0 +1,6 @@
+rm main2
+g++ -o main2 -std=c++0x -pedantic -Wall `cat buildfiles` \
+-L/usr/local/lib -I/usr/include/SDL -lSDL -lSDLmain -lSDL_image -lSDL_mixer \
+ -lpthread \
+-lEGL -lGLESv2 -lGL -lGLU \
+-I/opt/vc/include -L/opt/vc/lib -lbcm_host

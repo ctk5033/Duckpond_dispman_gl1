@@ -36,6 +36,8 @@
 		</Compiler>
 		<Linker>
 			<Add option="-I/opt/vc/include -lbcm_host" />
+			<Add option="-lEGL -lGLESv2" />
+			<Add option="-L/opt/vc/lib" />
 			<Add library="SDLmain" />
 			<Add library="GL" />
 			<Add library="GLU" />
@@ -47,6 +49,8 @@
 			<Add directory="/opt/vc/lib" />
 		</Linker>
 		<Unit filename="Animal.cpp" />
+		<Unit filename="BCM_Screen.cpp" />
+		<Unit filename="BCM_Screen.h" />
 		<Unit filename="Duck.cpp" />
 		<Unit filename="DuckData.cpp" />
 		<Unit filename="Duckling.cpp" />

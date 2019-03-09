@@ -4,10 +4,9 @@
 #include "../MainFile.h"
 #include "GameDraw.h"
 
+#include "../BCM_Screen.h"
 
 
-
- #include  "bcm_host.h"
 
 int GameEngine::SCREEN_W = 800;
 int GameEngine::SCREEN_H = 600;
@@ -57,8 +56,8 @@ float GameEngine::GetFPS()
 
 void GameEngine::Init(KString name, int w, int h, int windowW, int windowH, int fullScreen)
 {
-   bcm_host_init();
-
+   BCM_Screen::createSurface();
+   BCM_Screen::SwapBuffers();
 
    // ---
 
@@ -96,7 +95,7 @@ void GameEngine::Init(KString name, int w, int h, int windowW, int windowH, int 
 
   if (scaleW > scaleH){GlobalScale = scaleH;} else {GlobalScale = scaleW;}
 
-  atexit(SDL_Quit);
+  //atexit(SDL_Quit);
 
 
 
@@ -178,7 +177,7 @@ void GameEngine::SetVideo(bool fullScreen, bool reloadImages)
   WINDOW_H = systemY;
 
 
-  SDL_SetVideoMode(systemX, systemY, bpp, flags );
+  //SDL_SetVideoMode(systemX, systemY, bpp, flags );
 /*
 
       EGLDisplay eglDpy = eglGetDisplay(EGL_DEFAULT_DISPLAY);
@@ -363,7 +362,8 @@ void GameEngine::Draw()
 
  glPopMatrix();
 
- SDL_GL_SwapBuffers();
+ //SDL_GL_SwapBuffers();
+ BCM_Screen::SwapBuffers();
 }
 
 

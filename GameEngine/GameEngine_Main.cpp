@@ -34,6 +34,8 @@ int main( int argc, char** args)
 
   GameEngine::gameOn = true;
 
+  long startTime = SDL_GetTicks();
+
   while (GameEngine::gameOn )
   {
 
@@ -122,7 +124,11 @@ int main( int argc, char** args)
    GameEngine::Draw();
 
 
-   SDL_GL_SwapBuffers();
+    if (SDL_GetTicks() - startTime > 5000)
+    {
+     GameEngine::gameOn = false;
+     break;
+    }
 
 
   }
