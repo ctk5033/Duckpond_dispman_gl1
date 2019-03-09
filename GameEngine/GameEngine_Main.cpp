@@ -41,7 +41,7 @@ int main( int argc, char** args)
 
    bfps = SDL_GetTicks();
 
-   if ((bfps-efps)*GameEngine::frameLimit  >= 1000.0)
+   if ((bfps-efps)*GameEngine::frameLimit  >= 1000.0 || true)
    {
 
     if (bfps-efps != 0)
@@ -124,10 +124,10 @@ int main( int argc, char** args)
    GameEngine::Draw();
 
 
-    if (SDL_GetTicks() - startTime > 5000)
+    if (SDL_GetTicks() - startTime > 10000)
     {
-     GameEngine::gameOn = false;
-     break;
+    // GameEngine::gameOn = false;
+   //  break;
     }
 
 

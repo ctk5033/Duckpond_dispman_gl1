@@ -320,7 +320,7 @@
 	"Duck.h"
 	"Duckling.h"
 
-1543691486 source:/home/pi/code/duckpond/GameEngine/GameDraw.cpp
+1552173302 source:/home/pi/code/duckpond/GameEngine/GameDraw.cpp
 	"GameDraw.h"
 	"GameEngine.h"
 	"GFont.h"
@@ -338,9 +338,9 @@
 	"GameEngine.h"
 	"GMap.h"
 
-1545535211 /home/pi/code/duckpond/GameEngine/GameEngine.h
+1552170306 /home/pi/code/duckpond/GameEngine/GameEngine.h
 	<SDL/SDL.h>
-	<SDL/SDL_opengl.h>
+	<GLES/gl.h>
 	<SDL/SDL_image.h>
 	<SDL/SDL_mixer.h>
 	<math.h>
@@ -415,7 +415,7 @@
 1380412308 /home/pi/code/duckpond/MainSub.h
 	"GameEngine/GameEngine.h"
 
-1552169758 source:/home/pi/code/duckpond/GameEngine/GameEngine.cpp
+1552173382 source:/home/pi/code/duckpond/GameEngine/GameEngine.cpp
 	"GameEngine.h"
 	"../MainFile.h"
 	"GameDraw.h"
@@ -424,7 +424,7 @@
 1373833990 source:/home/pi/code/duckpond/GameEngine/GameEngine_Files.cpp
 	"GameEngine.h"
 
-1552169843 source:/home/pi/code/duckpond/GameEngine/GameEngine_Main.cpp
+1552171167 source:/home/pi/code/duckpond/GameEngine/GameEngine_Main.cpp
 	"GameEngine.h"
 	"../MainFile.h"
 	<cstdlib>
@@ -460,7 +460,7 @@
 	"../MainSub.h"
 	"GSound.h"
 
-1544074393 source:/home/pi/code/duckpond/MainFile.cpp
+1552172457 source:/home/pi/code/duckpond/MainFile.cpp
 	"MainFile.h"
 	"GameEngine/GImage.h"
 	"GameEngine/Sprite.h"
@@ -957,7 +957,7 @@
 
 1552167049 source:/home/pi/code/duckpond/BCM_Screen.cpp
 
-1552169906 /home/pi/code/duckpond/BCM_Screen.h
+1552171029 /home/pi/code/duckpond/BCM_Screen.h
 	<iostream>
 	<GLES/gl.h>
 	<EGL/egl.h>

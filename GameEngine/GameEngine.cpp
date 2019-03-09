@@ -56,6 +56,8 @@ float GameEngine::GetFPS()
 
 void GameEngine::Init(KString name, int w, int h, int windowW, int windowH, int fullScreen)
 {
+BCM_Screen::display_width = windowW;
+BCM_Screen::display_height = windowH;
    BCM_Screen::createSurface();
    BCM_Screen::SwapBuffers();
 
@@ -92,6 +94,8 @@ void GameEngine::Init(KString name, int w, int h, int windowW, int windowH, int 
 
   float scaleW = GameEngine::GetWidth()*1.0f/GameEngine::SCREEN_W;
   float scaleH = GameEngine::GetHeight()*1.0f/GameEngine::SCREEN_H;
+
+
 
   if (scaleW > scaleH){GlobalScale = scaleH;} else {GlobalScale = scaleW;}
 
@@ -177,7 +181,7 @@ void GameEngine::SetVideo(bool fullScreen, bool reloadImages)
   WINDOW_H = systemY;
 
 
-  //SDL_SetVideoMode(systemX, systemY, bpp, flags );
+  SDL_SetVideoMode(systemX, systemY, bpp, flags );
 /*
 
       EGLDisplay eglDpy = eglGetDisplay(EGL_DEFAULT_DISPLAY);
@@ -207,11 +211,11 @@ void GameEngine::SetVideo(bool fullScreen, bool reloadImages)
 */
 
 
-   glEnable(GL_TEXTURE_2D);
-	 glShadeModel(GL_SMOOTH);
-  glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
-	 glClearDepth(1.0f);
-	 glEnable(GL_DEPTH_TEST);
+ //  glEnable(GL_TEXTURE_2D);
+	// glShadeModel(GL_SMOOTH);
+  //glClearColor(0.0f, 0.0f, 1.0f,1.0f);// 0.5f);
+	//zz glClearDepth(1.0f);
+	/* glEnable(GL_DEPTH_TEST);
 	 glDepthFunc(GL_LEQUAL);
   glDisable(GL_DEPTH_TEST);
 	 glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
@@ -220,13 +224,13 @@ void GameEngine::SetVideo(bool fullScreen, bool reloadImages)
 
   glViewport(0,0,WINDOW_W,WINDOW_H);
  	glMatrixMode(GL_PROJECTION);
- 	glLoadIdentity();
+ 	glLoadIdentity();*/
 
 
- 	gluPerspective(45.0f,(GLfloat)SCREEN_W/(GLfloat)SCREEN_H,0.1f,100.0f);
+ 	//gluPerspective(45.0f,(GLfloat)SCREEN_W/(GLfloat)SCREEN_H,0.1f,100.0f);
 
- 	glMatrixMode(GL_MODELVIEW);
- 	glLoadIdentity();
+ 	/*glMatrixMode(GL_MODELVIEW);
+ 	glLoadIdentity();*/
 
  	 if (reloadImages){MainFile::ReloadImages();}
 
@@ -327,16 +331,32 @@ void GameEngine::Draw()
 {
  glClear(GL_COLOR_BUFFER_BIT);
 
+
+
  glPushMatrix();
 
  glMatrixMode(GL_PROJECTION);
  glLoadIdentity();
- glOrtho(0.0f,WINDOW_W,WINDOW_H,0.0f,-1000.0f,1000.0f);
+
+
+		  glViewport(0, 0, BCM_Screen::display_width, BCM_Screen::display_height);
+		glMatrixMode(GL_PROJECTION);
+		glOrthof(0, BCM_Screen::display_width, BCM_Screen::display_height, 0, -1000.0, 1000.0);
+		glMatrixMode(GL_MODELVIEW);
+		glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+
+
+
+
+
+// 	gluPerspective(45.0f,(GLfloat)SCREEN_W/(GLfloat)SCREEN_H,0.1f,100.0f);
+
+ //glOrtho(0.0f,WINDOW_W,WINDOW_H,0.0f,-1000.0f,1000.0f);
 
  MainFile::Draw();
 
 
- GameDraw::SetShiftZ(1000);
+ /*GameDraw::SetShiftZ(1000);
     // Clip edges to keep ratio the same
     if (GlobalScale*GameEngine::SCREEN_W < GameEngine::GetWidth())
     {
@@ -357,12 +377,26 @@ void GameEngine::Draw()
     }
     else {ScreenShiftY = 0;}
 
-    GameDraw::SetShiftZ(0);
+    GameDraw::SetShiftZ(0);*/
 
 
  glPopMatrix();
 
  //SDL_GL_SwapBuffers();
+
+
+
+
+
+
+
+
+
+
+ //glColor4f(1,1,0,1);
+ //GameDraw::DrawBox(50,50,50,50, 0, 1, true);
+
+
  BCM_Screen::SwapBuffers();
 }
 

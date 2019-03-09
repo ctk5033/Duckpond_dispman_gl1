@@ -1,4 +1,7 @@
 
+#ifndef BCM_SCREEN_FH
+#define BCM_SCREEN_FH 1
+
 #include <iostream>
 
 #include <GLES/gl.h>
@@ -173,6 +176,12 @@ namespace BCM_Screen
 
 		LOG(LogInfo) << "Created surface successfully!";
 
+		glViewport(0, 0, display_width, display_height);
+		glMatrixMode(GL_PROJECTION);
+		glOrthof(0, display_width, display_height, 0, -1.0, 1.0);
+		glMatrixMode(GL_MODELVIEW);
+		glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+
 
 		return true;
 	}
@@ -190,3 +199,6 @@ namespace BCM_Screen
 
 
 };
+
+
+#endif

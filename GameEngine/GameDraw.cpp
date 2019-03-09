@@ -7,6 +7,8 @@
 #include "../MainFile.h"
 
 
+
+
 #include "GameEngine.h"
 
 
@@ -93,6 +95,8 @@ void GameDraw::DrawBox(float x, float y, float sw, float sh,float rot, float sca
     shiftZ2 = 0;
     //if (!global && (X + W < 0 || X > GameEngine::SCREEN_W || Y + H < 0 || Y > GameEngine::SCREEN_W)) {return;}
     glPushMatrix();
+
+
     //glLoadIdentity();
     glTranslatef(X + W/2,Y + H/2,shiftZ);
 
@@ -146,6 +150,9 @@ void GameDraw::DrawImagePart(GImage* image, float x, float y, int sx, int sy, in
 
     };
 
+  /*  GameEngine::ScreenShiftX = 0;
+    GameEngine::ScreenShiftY = 0;*/
+
 
 
     float W = (sw*scaleX*GameEngine::GlobalScale );
@@ -182,6 +189,14 @@ void GameDraw::DrawImagePart(GImage* image, float x, float y, int sx, int sy, in
     //rY = H - rY;
     glPushMatrix();
   //  glLoadIdentity();
+
+/*  glLoadIdentity();
+		  glViewport(0, 0, GameEngine::WINDOW_W, GameEngine::WINDOW_H);
+		glMatrixMode(GL_PROJECTION);
+		glOrthof(0, GameEngine::WINDOW_W, GameEngine::WINDOW_H, 0, -1.0, 1.0);
+		glMatrixMode(GL_MODELVIEW);*/
+
+
     glTranslatef((int)(X + W/2),(int)(Y + H/2),shiftZ);
 
     glTranslatef(rX,rY,0);
