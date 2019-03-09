@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="LD28" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="C/;C/GameEngine/;C/MainSub/;C/Player/;C/PopText/;C/MainSub/MainGame/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ld28" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ld28r" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/SDL/SDL-1.2.15/include" />
+			<Add directory="/opt/vc/include" />
+		</Compiler>
+		<Linker>
+			<Add option="-I/opt/vc/include -lbcm_host" />
+			<Add library="SDLmain" />
+			<Add library="GL" />
+			<Add library="GLU" />
+			<Add library="glut" />
+			<Add library="SDL" />
+			<Add library="SDL_mixer" />
+			<Add library="SDL_image" />
+			<Add directory="C:/SDL/SDL-1.2.15/lib" />
+			<Add directory="/opt/vc/lib" />
+		</Linker>
+		<Unit filename="Animal.cpp" />
+		<Unit filename="Duck.cpp" />
+		<Unit filename="DuckData.cpp" />
+		<Unit filename="Duckling.cpp" />
+		<Unit filename="Egg.cpp" />
+		<Unit filename="Entity.cpp" />
+		<Unit filename="Fish.cpp" />
+		<Unit filename="Fly.cpp" />
+		<Unit filename="Fox.cpp" />
+		<Unit filename="GameEngine/GFont.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GFont.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GImage.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GImage.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GList.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GMap.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GMusic.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GMusic.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GPair.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GScript.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GScript.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GSound.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GSound.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GText.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GText.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GTypes.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GameDraw.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GameDraw.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GameEngine.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GameEngine.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GameEngine_Files.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/GameEngine_Main.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/KString.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/Sprite.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/Sprite.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/TextPrint.cpp">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="GameEngine/TextPrint.h">
+			<Option virtualFolder="C/GameEngine/" />
+		</Unit>
+		<Unit filename="Hawk.cpp" />
+		<Unit filename="MainFile.cpp">
+			<Option virtualFolder="C/" />
+		</Unit>
+		<Unit filename="MainFile.h">
+			<Option virtualFolder="C/" />
+		</Unit>
+		<Unit filename="MainGame.cpp">
+			<Option virtualFolder="C/MainSub/MainGame/" />
+		</Unit>
+		<Unit filename="MainGame.h">
+			<Option virtualFolder="C/MainSub/MainGame/" />
+		</Unit>
+		<Unit filename="MainMenu.cpp" />
+		<Unit filename="MainSub.cpp">
+			<Option virtualFolder="C/MainSub/" />
+		</Unit>
+		<Unit filename="MainSub.h">
+			<Option virtualFolder="C/Player/" />
+		</Unit>
+		<Unit filename="Plant.cpp" />
+		<Unit filename="Player.cpp">
+			<Option virtualFolder="C/Player/" />
+		</Unit>
+		<Unit filename="Player.h">
+			<Option virtualFolder="C/Player/" />
+		</Unit>
+		<Unit filename="Pond.cpp" />
+		<Unit filename="PopText.cpp">
+			<Option virtualFolder="C/PopText/" />
+		</Unit>
+		<Unit filename="PopText.h">
+			<Option virtualFolder="C/PopText/" />
+		</Unit>
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
