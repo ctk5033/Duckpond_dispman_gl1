@@ -36,24 +36,50 @@ int main( int argc, char** args)
 
   long startTime = SDL_GetTicks();
 
+
+    long frameHoldTime = SDL_GetTicks();
+     int frames = 0;
+
   while (GameEngine::gameOn )
   {
 
    bfps = SDL_GetTicks();
 
+  // int
+
+frames++;
+  if (bfps - frameHoldTime >= 3000)
+  {
+   GameEngine::FPS = frames/3;
+
+   //GameEngine::OpenWriteFile("fps", true);
+   //GameEngine::WriteFile(KString("fps:%f\n", GameEngine::FPS));
+   //GameEngine::CloseReadFile();
+   std::cout << "FPS " << GameEngine::FPS  << std::endl;
+
+
+        frames = 0;
+        frameHoldTime = SDL_GetTicks();
+
+
+  }
+
+
+
    if ((bfps-efps)*GameEngine::frameLimit  >= 1000.0)
    {
 
-    if (bfps-efps != 0)
+    /*if (bfps-efps != 0)
     {
      GameEngine::FPS = 1000.0f/((bfps-efps));
     }
-    else {GameEngine::FPS = 0;}
+    else {GameEngine::FPS = 0;}*/
 
     efps = bfps;
 
     GameEngine::Update();
     GameEngine::HandleKeys();
+
 
    }
 
@@ -121,8 +147,8 @@ int main( int argc, char** args)
     //SDL_Delay(1); //Delay / pause
    }
 
-   GameEngine::Draw();
 
+ GameEngine::Draw();
 
     if (SDL_GetTicks() - startTime > 10000)
     {

@@ -59,6 +59,9 @@ void GameEngine::Init(KString name, int w, int h, int windowW, int windowH, int 
 BCM_Screen::display_width = windowW;
 BCM_Screen::display_height = windowH;
    BCM_Screen::createSurface();
+
+   eglSwapInterval(BCM_Screen::display, 0);
+
    BCM_Screen::SwapBuffers();
 
    // ---

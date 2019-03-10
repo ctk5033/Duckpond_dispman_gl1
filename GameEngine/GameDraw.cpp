@@ -132,7 +132,7 @@ void GameDraw::DrawImage(GImage* image, float x, float y, float rot, float scale
 
 void GameDraw::DrawImagePart(GImage* image, float x, float y, int sx, int sy, int sw, int sh, float rot, float scaleX, float scaleY, int rX, int rY, int posX, int posY, bool ignoreRotScale)
 {
-
+   //DrawBox(x,y,sw,sh); return;
     static const GLfloat squareVertices[] = {
        -.5f, -.5f, 0,             // Top right
         -.5f, 0.5f, 0,            // Top left
