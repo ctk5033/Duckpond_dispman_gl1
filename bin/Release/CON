@@ -1,4 +1,10 @@
 ./ld28r
-SIZE:
+320
+200
+320 200Starting SDL...Creating surface...Resolution: 320x200...Created surface successfully!HI there!SIZE:
 128
 48
+FPS 2.06693e+06
+FPS 3.18065e+06
+FPS 3.17178e+06
+FPS 3.15099e+06

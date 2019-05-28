@@ -81,7 +81,7 @@ frames++;
     GameEngine::HandleKeys();
 
 
-   }
+
 
 
 
@@ -143,12 +143,16 @@ frames++;
      GameEngine::key[event.key.keysym.sym] = 0;
     }
 
+    }
+
+    GameEngine::Draw();
+
 
     //SDL_Delay(1); //Delay / pause
    }
 
 
- GameEngine::Draw();
+
 
     if (SDL_GetTicks() - startTime > 10000)
     {

@@ -180,11 +180,11 @@ void GameEngine::SetVideo(bool fullScreen, bool reloadImages)
   int systemY = videoInfo->current_h ;
   Uint8 bpp = videoInfo->vfmt->BitsPerPixel ;
 
-  WINDOW_W = systemX;
-  WINDOW_H = systemY;
+ // WINDOW_W = systemX;
+ // WINDOW_H = systemY;
 
 
-  SDL_SetVideoMode(systemX, systemY, bpp, flags );
+  SDL_SetVideoMode(WINDOW_W, WINDOW_H, bpp, flags );
 /*
 
       EGLDisplay eglDpy = eglGetDisplay(EGL_DEFAULT_DISPLAY);
@@ -367,7 +367,7 @@ void GameEngine::Draw()
  GameEngine::ResetColor();*/
 
 
- /*GameDraw::SetShiftZ(1000);
+ GameDraw::SetShiftZ(1000);
     // Clip edges to keep ratio the same
     if (GlobalScale*GameEngine::SCREEN_W < GameEngine::GetWidth())
     {
@@ -388,7 +388,7 @@ void GameEngine::Draw()
     }
     else {ScreenShiftY = 0;}
 
-    GameDraw::SetShiftZ(0);*/
+    GameDraw::SetShiftZ(0);
 
 
  glPopMatrix();

@@ -129,7 +129,7 @@ namespace BCM_Screen
 		{
 			bool success = graphics_get_display_size(0, &display_width, &display_height); //0 = LCD
 
-			if(success < 0)
+			if(!success)
 			{
 				LOG(LogError) << "Error getting display size!";
 

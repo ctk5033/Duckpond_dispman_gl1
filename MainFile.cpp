@@ -39,11 +39,26 @@ void MainFile::ReloadImages()
 
 void MainFile::Init()
 {
+ int frameW = 640;
+ int frameH = 480;
 
+ if (GameEngine::paramList.GetSize() >= 3)
+ {
+  frameW = GameEngine::paramList.Get(1).GetInt();
+  frameH = GameEngine::paramList.Get(2).GetInt();
+
+  std::cout << frameW << " " << frameH;
+
+  GameEngine::OpenWriteFile("log.txt");
+  GameEngine::WriteFile(frameW);
+  GameEngine::WriteFile(" ");
+  GameEngine::WriteFile(frameH);
+  GameEngine::CloseWriteFile();
+ }
 
 
  // game screen size, window size
- GameEngine::Init("Duck Pond", 1280/4,720/4,1280,720);
+ GameEngine::Init("Duck Pond", 1280/4,720/4,frameW,frameH);
 
  // init data here
  DuckData::InitData();
